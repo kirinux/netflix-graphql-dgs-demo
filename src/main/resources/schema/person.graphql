@@ -1,0 +1,33 @@
+type Query {
+    person(identifier: String): Person
+}
+
+type Person {
+    identifier: String
+    firstName: String
+    lastName: String
+    gender: Gender
+    address: Address
+    phones: [Phone]
+}
+
+type Phone {
+    type: PhoneType
+    number: String
+}
+
+enum PhoneType {
+    home,mobile
+}
+
+type Address {
+    street: String
+    city: String
+    country: String
+}
+
+enum Gender {
+    male,female
+}
+
+
