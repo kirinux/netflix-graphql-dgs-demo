@@ -14,9 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest(
-        classes = {DgsAutoConfiguration.class, PersonsDataFetcher.class}
+        classes = {DgsAutoConfiguration.class, PersonDataFetcher.class}
 )
-class PersonsDataFetcherTest {
+class PersonDataFetcherTest {
 
     @Autowired
     private DgsQueryExecutor queryExecutor;
