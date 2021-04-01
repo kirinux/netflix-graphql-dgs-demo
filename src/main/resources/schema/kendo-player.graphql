@@ -1,0 +1,46 @@
+type Query {
+    playersByName(lastName: String): [Player]
+    players(filter: PlayerFilter): [Player]
+}
+
+input PlayerFilter {
+    firstName: String
+    lastName: String
+    gender: Gender
+}
+
+type Player {
+    firstName: String  # PlayerDataFetcher
+    lastName: String   # PlayerDataFetcher
+    gender: Gender     # PlayerDataFetcher
+    address: [Address]   # AddressDataFetcher
+    phones: [Phone]    # PhoneDataFetcher
+    country: Country   #CountryDataFetcher + dataloader + context cache (refential data)
+}
+
+type Country {
+    name: String
+    code: String
+}
+
+type Phone {
+    type: PhoneType
+    number: String
+}
+
+enum PhoneType {
+    home,mobile
+}
+
+type Address {
+    type: String
+    street: String
+    city: String
+    country: String
+}
+
+enum Gender {
+    male,female
+}
+
+

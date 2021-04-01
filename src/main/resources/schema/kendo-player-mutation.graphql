@@ -1,0 +1,13 @@
+type Mutation {
+    addPlayer(player: PlayerInput): Player
+}
+
+input PlayerInput {
+    firstName: String  # PlayerDataFetcher
+    lastName: String   # PlayerDataFetcher
+    gender: Gender     # PlayerDataFetcher
+    country: String   #CountryDataFetcher + dataloader + context cache (refential data)
+}
+
+
+
